@@ -1,0 +1,271 @@
+$green: #1dad00;
+$blue: #0090c9;
+
+html,body{
+    overflow-x: hidden;
+}
+
+body {
+  color: #ffffff;
+  font-family: Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+img {
+  pointer-events: none;
+}
+
+h3 {
+}
+
+.App {
+  top: 0;
+  left: 0;
+  width: 80vw;
+  height: 100vh;
+  min-width: 30rem;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  align-content: flex-start
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.particleBackground {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#1e82aa, rgb(56, 0, 47));
+}
+
+
+
+.crypto-wrapper {
+  pointer-events: none;
+  overflow-y: scroll;
+  position: fixed;
+  width: 100vw;
+  min-width: 20rem;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+}
+
+.crypto {
+  pointer-events: all;
+  margin: auto;
+  position: relative;
+  padding: 10px;
+  width: 15vw;
+  height: 15vw;
+  min-width: 170px;
+  min-height: 170px;
+  max-width: 18rem;
+  max-height: 18rem;
+  background-color: #48cbff15;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+  transition: 0.2s ease-in;
+}
+
+.crypto:hover {
+  transition: 0.2s ease-in;
+  box-shadow: inset 0px 0px 50px 0px #ffffffa9;
+}
+
+.crypto-link {
+  padding-bottom: 1rem;
+  width: 15vw;
+  height: 15vw;
+  min-width: 170px;
+  min-height: 170px;
+  padding: 0;
+  z-index: 0;
+  margin: 1.5rem;
+  cursor: pointer;
+  .info {
+    display: flex;
+    justify-content: center;
+
+    .info-item {
+      margin: 4px;
+    }
+  }
+}
+
+.logo {
+  width: 50%;
+  height: 50%;
+}
+
+.crypto-focused {
+  position: fixed;
+  left: 0;
+  pointer-events: none;
+  min-width: 95vw;
+  min-height: 30rem;
+  padding: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition-duration: 0s;
+
+
+  .logo-section {
+    margin-left: 2rem;
+    .logo {
+      width: 15rem;
+      transform: rotateY(45deg);
+      animation: rotateAnimation 15s linear infinite;
+      @keyframes rotateAnimation {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(360deg);
+        }
+      }
+    }
+  }
+
+  .info {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition-duration: 0s;
+    top: 0;
+
+    .info-item-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      .info-item {
+        margin: 4px;
+      }
+    }
+  }
+
+  .return {
+    position: fixed;
+    left: 1rem;
+    top: calc(50% - 4rem);
+    cursor: pointer;
+    pointer-events: all;
+    user-select: none;
+    z-index: 10;
+    transition-duration: 0.3s;
+  }
+
+  .return:hover {
+    color: red;
+  }
+}
+
+@media screen and (max-width: 910px) {
+  .crypto-focused {
+    flex-direction: column;
+    height: 95vh;
+    width: 30rem;
+    .logo-section {
+      width: 25rem;
+      height: 20rem;
+      .logo {
+        width: 25rem;
+      }
+    }
+  }
+}
+
+.thin {
+  font-weight: lighter;
+}
+
+.noMargin {
+  margin: 0;
+}
+
+.large {
+  font-size: 2.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  // width: 0px;
+  // background: transparent;
+  width: 8px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  
+  border-radius: 10px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+	background-color: rgba(85, 85, 85, 0.493);
+}
+
+@media screen and (max-width: 665px) {
+  .crypto-wrapper {
+    align-content: space-between;
+    padding-bottom: 3rem;
+  }
+  .crypto {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width:480px) {
+  .crypto-focused {
+    width: 100vw;
+    
+  }
+
+  .logo-section {
+    margin-right: 2rem;
+    margin-top: 2rem;
+  }
+
+  .thin.large {
+    font-size: 1.5rem;
+  }
+
+  
+}
